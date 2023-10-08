@@ -16,7 +16,7 @@ const jwt = require("jsonwebtoken")
 
 // mongodb+srv://filipjovicccc:<password>@cluster0.siv1ig2.mongodb.net/
 
-mongoose.connect("mongodb+srv://filipjovicccc:antropomorfni@cluster0.siv1ig2.mongodb.net/", {
+mongoose.connect("mongodb+srv://192.168.1.2:8081/filipjovicccc:antropomorfni@cluster0.siv1ig2.mongodb.net/", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() =>{
@@ -45,7 +45,7 @@ const sendVerificationEmail = async(email, verificationToken)=>{
     from: "amazon.com",
     to: email,
     subject: "Please verify your email",
-    text: `Please verify your email by clicking on the following link: http://localhost:8000/verify/${verificationToken}` + verificationToken
+    text: `Please verify your email by clicking on the following link: http://192.168.1.2:8081/verify/${verificationToken}` + verificationToken
     }
 
     //send the email

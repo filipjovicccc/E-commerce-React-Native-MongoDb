@@ -4,8 +4,9 @@ import {MaterialIcons} from "@expo/vector-icons"
 import {AntDesign} from "@expo/vector-icons"
 import {Ionicons} from "@expo/vector-icons"
 import { useNavigation } from '@react-navigation/native'
-import axios from 'axios'
+import { Alert } from 'react-native';
 
+import axios from 'axios'
 
 const RegisterScreen = () => {
 
@@ -21,7 +22,7 @@ const RegisterScreen = () => {
     password:password
   };
 
-  axios.post("http://localhost:8000/register", user).then((response)=> {
+  axios.post("http://192.168.1.2:8081/register", user).then((response)=> {
 
     console.log(response)
     Alert.alert("Registered successfull", "You have registered successfully");
